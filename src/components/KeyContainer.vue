@@ -9,8 +9,8 @@
 			<span>{{ code.substring(3, 6) }}</span>
 		</span>
 		<div class="progress">
-			<object data="/spinner.svg" class="behind" type="image/svg+xml" />
-			<object data="/spinner.svg" class="above" type="image/svg+xml" />
+			<object data="./spinner.svg" class="behind" type="image/svg+xml" />
+			<object data="./spinner.svg" class="above" type="image/svg+xml" />
 		</div>
 	</div>
 </template>
