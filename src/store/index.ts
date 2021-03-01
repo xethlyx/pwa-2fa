@@ -34,6 +34,8 @@ const store = createStore({
 			if (!confirm) return;
 
 			delete state.keys[keyId];
+
+			localStorage.setItem('keys', JSON.stringify(state.keys));
 		},
 		updateKeys(state) {
 			const newKeys = { ...state.keys };
