@@ -12,7 +12,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pwa-2fa/img/more.45700fa6.svg"
   },
   {
-    "revision": "9f5825e96b83813900ce1b38f2747bbf",
+    "revision": "c9f363435c6e0736b95d802a43b8534d",
     "url": "/pwa-2fa/index.html"
   },
   {
@@ -24,7 +24,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pwa-2fa/js/chunk-vendors.a58749a9.js"
   },
   {
-    "revision": "d5a7615aeef2c37a0025cbf6e4910b09",
+    "revision": "04b79e2c076a783d7eaf597c62a97063",
     "url": "/pwa-2fa/manifest.json"
   },
   {
