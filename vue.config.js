@@ -1,3 +1,3 @@
 module.exports = {
-	baseUrl: process.env.NODE_ENV === 'production' ? '/pwa-2fa/' : '/'
+	publicPath: process.env.NODE_ENV === 'production' ? '/pwa-2fa/' : '/'
 };
