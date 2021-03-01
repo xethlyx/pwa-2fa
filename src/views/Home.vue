@@ -60,5 +60,6 @@ export default class Home extends Vue {
 .home {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 400px));
+	gap: 20px;
 }
 </style>
