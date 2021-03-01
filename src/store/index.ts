@@ -67,7 +67,6 @@ if (localStorage.getItem('keys')) {
 }
 
 function updateCode() {
-	console.log('update', totp.timeRemaining() * 1000);
 	store.commit('updateKeys');
 	store.commit('updateExpiry');
 	setTimeout(updateCode, totp.timeRemaining() * 1000);
