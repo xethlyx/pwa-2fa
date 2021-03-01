@@ -1,4 +1,4 @@
-import { totp } from 'otplib';
+import { authenticator } from 'otplib';
 import { createStore } from 'vuex';
 
 function generateId(length: number) {
@@ -23,7 +23,7 @@ const store = createStore({
 			state.keys[generateId(5)] = {
 				name,
 				secret,
-				code: totp.generate(secret)
+				code: authenticator.generate(secret)
 			};
 
 			localStorage.setItem('keys', JSON.stringify(state.keys));
@@ -39,7 +39,7 @@ const store = createStore({
 			const newKeys = { ...state.keys };
 
 			Object.entries(newKeys).forEach(([index, key]) => {
-				newKeys[index].code = totp.generate(key.secret);
+				newKeys[index].code = authenticator.generate(key.secret);
 			});
 		},
 		updateContext(state, newContext?: { x: number; y: number; keyId: string }) {
@@ -51,7 +51,7 @@ const store = createStore({
 			state.contextMenu = newContext ? { ...newContext, debounce: true } : undefined;
 		},
 		updateExpiry(state) {
-			state.expiry = Date.now() + totp.timeRemaining() * 1000;
+			state.expiry = Date.now() + authenticator.timeRemaining() * 1000;
 		}
 	},
 	actions: {
@@ -69,6 +69,6 @@ if (localStorage.getItem('keys')) {
 function updateCode() {
 	store.commit('updateKeys');
 	store.commit('updateExpiry');
-	setTimeout(updateCode, totp.timeRemaining() * 1000);
+	setTimeout(updateCode, authenticator.timeRemaining() * 1000);
 }
 setTimeout(updateCode, 0);
